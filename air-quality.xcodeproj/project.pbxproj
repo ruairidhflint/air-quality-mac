@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		8E28E5362C5824AA00039007 /* air_qualityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28E5352C5824AA00039007 /* air_qualityApp.swift */; };
-		8E28E53A2C5824AC00039007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E28E5392C5824AC00039007 /* Assets.xcassets */; };
-		8E28E53D2C5824AC00039007 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E28E53C2C5824AC00039007 /* Preview Assets.xcassets */; };
+		8E859D382C5927700043F4A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E859D372C5927700043F4A8 /* ContentView.swift */; };
+		8E859D3A2C5928130043F4A8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E859D392C5928130043F4A8 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8E28E5322C5824AA00039007 /* air-quality.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "air-quality.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E28E5352C5824AA00039007 /* air_qualityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = air_qualityApp.swift; sourceTree = "<group>"; };
-		8E28E5392C5824AC00039007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8E28E53C2C5824AC00039007 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8E28E53E2C5824AC00039007 /* air_quality.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = air_quality.entitlements; sourceTree = "<group>"; };
+		8E859D372C5927700043F4A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8E859D392C5928130043F4A8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		8E9B5D1A2C58D0B7001894AD /* air-quality.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "air-quality.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,19 +53,11 @@
 			isa = PBXGroup;
 			children = (
 				8E28E5352C5824AA00039007 /* air_qualityApp.swift */,
-				8E28E5392C5824AC00039007 /* Assets.xcassets */,
 				8E28E53E2C5824AC00039007 /* air_quality.entitlements */,
-				8E28E53B2C5824AC00039007 /* Preview Content */,
+				8E859D372C5927700043F4A8 /* ContentView.swift */,
+				8E859D392C5928130043F4A8 /* Location.swift */,
 			);
 			path = "air-quality";
-			sourceTree = "<group>";
-		};
-		8E28E53B2C5824AC00039007 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				8E28E53C2C5824AC00039007 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +118,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E28E53D2C5824AC00039007 /* Preview Assets.xcassets in Resources */,
-				8E28E53A2C5824AC00039007 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +128,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E859D382C5927700043F4A8 /* ContentView.swift in Sources */,
+				8E859D3A2C5928130043F4A8 /* Location.swift in Sources */,
 				8E28E5362C5824AA00039007 /* air_qualityApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +264,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"air-quality/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = X9ST9H8X5F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -304,7 +296,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"air-quality/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = X9ST9H8X5F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
