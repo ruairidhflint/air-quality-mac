@@ -37,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if popover?.isShown == true {
                 popover?.performClose(nil)
             } else {
-                locationViewModel.requestLocation()
+                locationViewModel.refreshData() // Refresh data when opening the popover
                 popover?.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
             }
         }
@@ -69,25 +69,63 @@ struct CurrentAirQuality: Codable {
 
 class LocationViewModel: NSObject, ObservableObject {
     @Published var locationName: String?
-    @Published var status: String = "Tap to fetch location and air quality"
+    @Published var status: String = "Fetching location and air quality..."
     @Published var airQualityData: CurrentAirQuality?
+    @Published var isLoading: Bool = false
     
     private let locationManager = CLLocationManager()
     private let geocoder = CLGeocoder()
+    private var locationRetryCount = 0
+    private let maxLocationRetries = 3
     
     override init() {
         super.init()
         locationManager.delegate = self
     }
     
-    func requestLocation() {
+    func refreshData() {
+        requestLocation()
+    }
+    
+    private func requestLocation() {
         status = "Fetching location..."
+        locationRetryCount = 0
+        isLoading = true
         
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
+            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            checkLocationAuthorization()
         } else {
             status = "Location services are disabled"
+            isLoading = false
+        }
+    }
+    
+    private func checkLocationAuthorization() {
+        switch locationManager.authorizationStatus {
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+        case .denied, .restricted:
+            status = "Location access denied. Please enable in Settings."
+            isLoading = false
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        @unknown default:
+            status = "Unknown authorization status"
+            isLoading = false
+        }
+    }
+    
+    private func retryLocationRequest() {
+        guard locationRetryCount < maxLocationRetries else {
+            status = "Unable to fetch location after several attempts. Please try again later."
+            isLoading = false
+            return
+        }
+        
+        locationRetryCount += 1
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            self?.locationManager.startUpdatingLocation()
         }
     }
     
@@ -96,6 +134,7 @@ class LocationViewModel: NSObject, ObservableObject {
         
         guard let url = URL(string: urlString) else {
             status = "Invalid URL"
+            isLoading = false
             return
         }
         
@@ -104,6 +143,7 @@ class LocationViewModel: NSObject, ObservableObject {
         
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             DispatchQueue.main.async {
+                self?.isLoading = false
                 if let error = error {
                     self?.status = "Network error: \(error.localizedDescription)"
                     return
@@ -170,22 +210,19 @@ extension LocationViewModel: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         DispatchQueue.main.async {
-            self.status = "Error: \(error.localizedDescription)"
-            print("Location error: \(error)")
+            if (error as NSError).code == 0 && (error as NSError).domain == kCLErrorDomain {
+                print("Temporary location error, retrying...")
+                self.retryLocationRequest()
+            } else {
+                self.status = "Error: \(error.localizedDescription)"
+                self.isLoading = false
+                print("Location error: \(error)")
+            }
         }
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        switch manager.authorizationStatus {
-        case .authorizedAlways, .authorizedWhenInUse:
-            manager.startUpdatingLocation()
-        case .denied, .restricted:
-            status = "Location access denied. Please enable in Settings."
-        case .notDetermined:
-            manager.requestWhenInUseAuthorization()
-        @unknown default:
-            status = "Unknown authorization status"
-        }
+        checkLocationAuthorization()
     }
 }
 
@@ -193,36 +230,100 @@ struct ContentView: View {
     @ObservedObject var viewModel: LocationViewModel
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {            
+        VStack(alignment: .leading, spacing: 16) {
+            header
+            
+            if viewModel.isLoading {
+                loadingView
+            } else if let airQuality = viewModel.airQualityData {
+                airQualityView(airQuality: airQuality)
+            } else {
+                Text("Waiting for air quality data...")
+                    .font(.callout)
+                    .foregroundColor(.secondary)
+            }
+            
+        }
+        .frame(width: 300)
+        .padding()
+    }
+    
+    private var header: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(viewModel.locationName ?? "Location")
+                .font(.headline)
+            
             Text(viewModel.status)
                 .font(.caption)
                 .foregroundColor(.secondary)
-            
-            if let locationName = viewModel.locationName {
-                Text("\(locationName)")
-                    .font(.headline)
-            }
-            
-            if let airQuality = viewModel.airQualityData {
-                Text("Air Quality Index: \(airQuality.europeanAQI)")
-                    .font(.headline)
-                    .padding(.top)
-                Text("PM10: \(airQuality.pm10, specifier: "%.2f") µg/m³")
-                Text("PM2.5: \(airQuality.pm2_5, specifier: "%.2f") µg/m³")
-                Text("Carbon Monoxide: \(airQuality.carbonMonoxide, specifier: "%.2f") µg/m³")
-                Text("Nitrogen Dioxide: \(airQuality.nitrogenDioxide, specifier: "%.2f") µg/m³")
-                Text("Sulphur Dioxide: \(airQuality.sulphurDioxide, specifier: "%.2f") µg/m³")
-                Text("Ozone: \(airQuality.ozone, specifier: "%.2f") µg/m³")
-            }
-            
-            Spacer()
-            
-            Button("Refresh Data") {
-                viewModel.requestLocation()
-            }
-            .padding(.top)
         }
-        .frame(width: 300, height: 400)
-        .padding()
+    }
+    
+    private var loadingView: some View {
+        HStack {
+            Spacer()
+            ProgressView()
+                .scaleEffect(0.7)
+                .frame(width: 20, height: 20)
+            Spacer()
+        }
+    }
+    
+    private func airQualityView(airQuality: CurrentAirQuality) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            airQualityMeter(value: airQuality.europeanAQI)
+            
+            Group {
+                airQualityRow(label: "PM10", value: airQuality.pm10, unit: "µg/m³")
+                airQualityRow(label: "PM2.5", value: airQuality.pm2_5, unit: "µg/m³")
+                airQualityRow(label: "Carbon Monoxide", value: airQuality.carbonMonoxide, unit: "µg/m³")
+                airQualityRow(label: "Nitrogen Dioxide", value: airQuality.nitrogenDioxide, unit: "µg/m³")
+                airQualityRow(label: "Sulphur Dioxide", value: airQuality.sulphurDioxide, unit: "µg/m³")
+                airQualityRow(label: "Ozone", value: airQuality.ozone, unit: "µg/m³")
+            }
+        }
+    }
+    
+    private func airQualityMeter(value: Int) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text("Air Quality Index")
+                .font(.headline)
+            
+            ZStack(alignment: .leading) {
+                Rectangle()
+                    .fill(Color.gray.opacity(0.3))
+                    .frame(height: 8)
+                
+                Rectangle()
+                    .fill(airQualityColor(for: value))
+                    .frame(width: CGFloat(value) / 100 * 300, height: 8)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 4))
+            
+            Text("\(value)")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(airQualityColor(for: value))
+        }
+    }
+    
+    private func airQualityRow(label: String, value: Double, unit: String) -> some View {
+        HStack {
+            Text(label)
+                .foregroundColor(.secondary)
+            Spacer()
+            Text("\(value, specifier: "%.2f") \(unit)")
+                .fontWeight(.medium)
+        }
+    }
+    
+    private func airQualityColor(for value: Int) -> Color {
+        switch value {
+        case 0...50: return .green
+        case 51...100: return .yellow
+        case 101...150: return .orange
+        case 151...200: return .red
+        default: return .purple
+        }
     }
 }
