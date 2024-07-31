@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         
         if let statusButton = statusItem?.button {
-            statusButton.image = NSImage(systemSymbolName: "aqi.medium", accessibilityDescription: "Air Quality")
+            statusButton.image = NSImage(systemSymbolName: "cloud.fill", accessibilityDescription: "Air Quality")
             statusButton.action = #selector(togglePopover)
         }
         

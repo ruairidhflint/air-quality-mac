@@ -19,7 +19,7 @@ struct ContentView: View {
             }
             
         }
-        .frame(width: 300)
+        .frame(width: 300 )
         .padding()
     }
     
@@ -78,7 +78,7 @@ struct ContentView: View {
             Text("\(value)")
                 .font(.title)
                 .fontWeight(.bold)
-                .foregroundColor(airQualityColor(for: value))
+
         }
     }
     
