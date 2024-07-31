@@ -90,24 +90,29 @@ struct ContentView: View {
             Text("Air Quality Index")
                 .font(.headline)
             
-            ZStack(alignment: .leading) {
-                Rectangle()
-                    .fill(Color.gray.opacity(0.3))
-                    .frame(height: 8)
-                
-                Rectangle()
-                    .fill(airQualityColor(for: value))
-                    .frame(width: CGFloat(value) / 100 * 300, height: 8)
+            GeometryReader { geometry in
+                ZStack(alignment: .leading) {
+                    Rectangle()
+                        .fill(Color.gray.opacity(0.3))
+                        .frame(height: 8)
+                    
+                    Rectangle()
+                        .fill(airQualityColor(for: value))
+                        .frame(width: min(CGFloat(value) / 500 * geometry.size.width, geometry.size.width), height: 8)
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 4))
             }
-            .clipShape(RoundedRectangle(cornerRadius: 4))
+            .frame(height: 8)
             
-            Text("\(value)")
-                .font(.title)
-                .fontWeight(.bold)
-            
+        
+                Text("\(value)")
+                    .font(.title)
+                    .fontWeight(.bold)
+                
+                Spacer()
+        
         }
     }
-    
     private func airQualityRow(label: String, value: Double, unit: String) -> some View {
         HStack {
             Text(label)
@@ -117,8 +122,6 @@ struct ContentView: View {
                 .fontWeight(.medium)
         }
     }
-    
-    
     
     private func airQualityColor(for value: Int) -> Color {
         switch value {

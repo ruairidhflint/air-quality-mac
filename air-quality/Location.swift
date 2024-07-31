@@ -129,7 +129,7 @@ class LocationViewModel: NSObject, ObservableObject {
                 }
             }
         }
-        print("Starting network request")
+//        print("Starting network request")
         task.resume()
     }
     
