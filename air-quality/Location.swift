@@ -8,7 +8,7 @@ struct AirQualityData: Codable {
 }
 
 struct CurrentAirQuality: Codable {
-    let europeanAQI: Int
+    let usAQI: Int
     let pm10: Double
     let pm2_5: Double
     let carbonMonoxide: Double
@@ -17,7 +17,7 @@ struct CurrentAirQuality: Codable {
     let ozone: Double
     
     enum CodingKeys: String, CodingKey {
-        case europeanAQI = "european_aqi"
+        case usAQI = "us_aqi"
         case pm10, pm2_5
         case carbonMonoxide = "carbon_monoxide"
         case nitrogenDioxide = "nitrogen_dioxide"
@@ -89,7 +89,7 @@ class LocationViewModel: NSObject, ObservableObject {
     }
     
     func fetchAirQuality(latitude: Double, longitude: Double) {
-        let urlString = "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=\(latitude)&longitude=\(longitude)&current=european_aqi,pm10,pm2_5,carbon_monoxide,nitrogen_dioxide,sulphur_dioxide,ozone"
+        let urlString = "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=\(latitude)&longitude=\(longitude)&current=us_aqi,pm10,pm2_5,carbon_monoxide,nitrogen_dioxide,sulphur_dioxide,ozone"
         
         guard let url = URL(string: urlString) else {
             status = "Invalid URL"
