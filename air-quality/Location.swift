@@ -97,8 +97,8 @@ class LocationViewModel: NSObject, ObservableObject {
             return
         }
         
-        print("Fetching air quality for latitude: \(latitude), longitude: \(longitude)")
-        print("URL: \(urlString)")
+        //        print("Fetching air quality for latitude: \(latitude), longitude: \(longitude)")
+        //        print("URL: \(urlString)")
         
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             DispatchQueue.main.async {

@@ -2,20 +2,34 @@ import SwiftUI
 
 struct AirQualityInfoView: View {
     let indicators: [(name: String, explanation: String)] = [
-        ("AQI", "Environmental Quality Index: Overall air quality measure"),
-        ("PM10",  "Particulate Matter up to 10 micrometers: Dust, pollen, mold"),
-        ("PM2.5",  "Fine Particulate Matter up to 2.5 micrometers: Smoke, haze"),
-        ("Carbon Monoxide", "Colorless, odorless gas from incomplete combustion"),
-        ("Nitrogen Dioxide", "Reddish-brown gas from vehicle emissions and industry"),
-        ("Sulphur Dioxide", "Colorless gas with sharp odor from fossil fuel combustion"),
-        ("Ozone",  "Bluish gas formed by chemical reactions between pollutants")
+        ("AQI", "A standardized index that reports overall air quality by considering multiple pollutants."),
+        ("PM10",  "Particulate matter with a diameter of 10 micrometers or less, including dust, pollen, and mold spores."),
+        ("PM2.5",  "Fine particulate matter with a diameter of 2.5 micrometers or less, often resulting from combustion processes."),
+        ("Carbon Monoxide", "A colorless, odorless gas produced by incomplete combustion of carbon-containing fuels."),
+        ("Nitrogen Dioxide", "A reddish-brown gas primarily emitted from burning fossil fuels, contributing to smog and acid rain."),
+        ("Sulphur Dioxide", "A colorless gas with a sharp odor, mainly produced by burning fossil fuels containing sulfur."),
+        ("Ozone",  "A reactive gas composed of three oxygen atoms, beneficial in the upper atmosphere but harmful at ground level.")
     ]
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(spacing: 10) {
+            
+            Image("Icon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+                .cornerRadius(10)
+                .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 2)
+                .padding(.bottom, 10)
+            
             Text("Air Quality")
                 .font(.system(size: 24, weight: .semibold))
                 .frame(maxWidth: .infinity, alignment: .center)
+            
+            Text("Version 1.0.0")
+                .font(.system(size: 12))
+                .foregroundColor(.secondary)
+                .frame( alignment: .center)
                 .padding(.bottom, 10)
             
             ForEach(indicators, id: \.0) { indicator in
@@ -33,19 +47,15 @@ struct AirQualityInfoView: View {
             
             Divider()
                 .padding(.vertical, 10)
-            
-            Text("Air quality indicators provide crucial information about the composition and safety of the air we breathe.")
-                .font(.system(size: 11))
-                .foregroundColor(.secondary)
+            HStack(spacing: 4) {
+                Text("Built by")
+                Link("Rory Flint", destination: URL(string: "https://roryflint.co.uk")!).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/).focusable(false)
+            }
+            .font(.system(size: 11))
+            .foregroundColor(.secondary)
         }
         .padding(20)
         .frame(width: 400)
         .background(Color(NSColor.windowBackgroundColor))
     }
 }
-
-//struct AirQualityInfoView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AirQualityInfoView()
-//    }
-//}

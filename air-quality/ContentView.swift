@@ -118,7 +118,7 @@ struct ContentView: View {
         }
     }
     
-
+    
     
     private func airQualityColor(for value: Int) -> Color {
         switch value {
@@ -136,5 +136,5 @@ struct ContentView: View {
             return .maroon    // Hazardous (301-500)
         }
     }
-
+    
 }
