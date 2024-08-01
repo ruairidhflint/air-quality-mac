@@ -282,8 +282,8 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSLocationUsageDescription = "This app needs access to your location to display your coordinates.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to display your current coordinates.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "This app needs access This app requires access to your location to provide relevant air quality data. Your coordinates are used to display your location and to retrieve data from the Open-Meteo API (https://open-meteo.com/). We do not store, track, or use your location data for any other purpose.to your location to determine relevant air quality data. The co-ordinates are used to display your location and are passed to an API (https://open-meteo.com/) to retrieve air quality data. ";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires access to your location to provide relevant air quality data. Your coordinates are used to display your location and to retrieve data from the Open-Meteo API (https://open-meteo.com/). We do not store, track, or use your location data for any other purpose.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -318,8 +318,8 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSLocationUsageDescription = "This app needs access to your location to display your coordinates.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to display your current coordinates.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "This app needs access This app requires access to your location to provide relevant air quality data. Your coordinates are used to display your location and to retrieve data from the Open-Meteo API (https://open-meteo.com/). We do not store, track, or use your location data for any other purpose.to your location to determine relevant air quality data. The co-ordinates are used to display your location and are passed to an API (https://open-meteo.com/) to retrieve air quality data. ";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires access to your location to provide relevant air quality data. Your coordinates are used to display your location and to retrieve data from the Open-Meteo API (https://open-meteo.com/). We do not store, track, or use your location data for any other purpose.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
