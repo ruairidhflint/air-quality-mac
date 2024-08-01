@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8E28E5322C5824AA00039007 /* AQI Checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AQI Checker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E28E5322C5824AA00039007 /* Oxygenie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oxygenie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E28E5352C5824AA00039007 /* air_qualityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = air_qualityApp.swift; sourceTree = "<group>"; };
 		8E6642DA2C5A5DD200943818 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		8E859D372C5927700043F4A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		8E28E5332C5824AA00039007 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E28E5322C5824AA00039007 /* AQI Checker.app */,
+				8E28E5322C5824AA00039007 /* Oxygenie.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,9 +67,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8E28E5312C5824AA00039007 /* AQI Checker */ = {
+		8E28E5312C5824AA00039007 /* Oxygenie */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E28E5412C5824AC00039007 /* Build configuration list for PBXNativeTarget "AQI Checker" */;
+			buildConfigurationList = 8E28E5412C5824AC00039007 /* Build configuration list for PBXNativeTarget "Oxygenie" */;
 			buildPhases = (
 				8E28E52E2C5824AA00039007 /* Sources */,
 				8E28E52F2C5824AA00039007 /* Frameworks */,
@@ -79,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = "AQI Checker";
+			name = Oxygenie;
 			productName = "air-quality";
-			productReference = 8E28E5322C5824AA00039007 /* AQI Checker.app */;
+			productReference = 8E28E5322C5824AA00039007 /* Oxygenie.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +99,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8E28E52D2C5824AA00039007 /* Build configuration list for PBXProject "AQI Checker" */;
+			buildConfigurationList = 8E28E52D2C5824AA00039007 /* Build configuration list for PBXProject "Oxygenie" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8E28E5312C5824AA00039007 /* AQI Checker */,
+				8E28E5312C5824AA00039007 /* Oxygenie */,
 			);
 		};
 /* End PBXProject section */
@@ -278,7 +278,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "AQI Checker";
+				INFOPLIST_KEY_CFBundleDisplayName = Oxygenie;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -314,7 +314,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "AQI Checker";
+				INFOPLIST_KEY_CFBundleDisplayName = Oxygenie;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -336,7 +336,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8E28E52D2C5824AA00039007 /* Build configuration list for PBXProject "AQI Checker" */ = {
+		8E28E52D2C5824AA00039007 /* Build configuration list for PBXProject "Oxygenie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E28E53F2C5824AC00039007 /* Debug */,
@@ -345,7 +345,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8E28E5412C5824AC00039007 /* Build configuration list for PBXNativeTarget "AQI Checker" */ = {
+		8E28E5412C5824AC00039007 /* Build configuration list for PBXNativeTarget "Oxygenie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E28E5422C5824AC00039007 /* Debug */,
