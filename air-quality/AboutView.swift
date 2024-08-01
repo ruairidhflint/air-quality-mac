@@ -22,7 +22,7 @@ struct AirQualityInfoView: View {
                 .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 2)
                 .padding(.bottom, 10)
             
-            Text("Air Quality")
+            Text("Oxygenie")
                 .font(.system(size: 24, weight: .semibold))
                 .frame(maxWidth: .infinity, alignment: .center)
             

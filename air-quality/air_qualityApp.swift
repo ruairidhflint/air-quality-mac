@@ -68,7 +68,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             defer: false
         )
         
-        aboutWindow?.title = "Air Quality"
+        aboutWindow?.title = "Oxygenie"
         aboutWindow?.center()
         aboutWindow?.contentView = NSHostingView(rootView: AirQualityInfoView	())
         aboutWindow?.isReleasedWhenClosed = false
