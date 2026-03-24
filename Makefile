@@ -27,3 +27,4 @@ test:
 
 clean:
 	xcodebuild -project "$(PROJECT)" -scheme "$(SCHEME)" -destination '$(DEST)' clean
+	
