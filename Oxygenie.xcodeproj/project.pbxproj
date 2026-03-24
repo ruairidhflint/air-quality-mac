@@ -7,21 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B000012C5824AA00039001 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000012C5824AA00039001 /* AppLogger.swift */; };
+		1B000012C5824AA00039002 /* AirQualityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000012C5824AA00039002 /* AirQualityError.swift */; };
+		1B000012C5824AA00039003 /* AQIMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000012C5824AA00039003 /* AQIMetrics.swift */; };
+		1B000012C5824AA00039004 /* AirQualityModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000012C5824AA00039004 /* AirQualityModels.swift */; };
+		1B000012C5824AA00039005 /* AirQualityCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000012C5824AA00039005 /* AirQualityCache.swift */; };
+		1B000012C5824AA00039006 /* AirQualityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000012C5824AA00039006 /* AirQualityService.swift */; };
+		1B000012C5824AA00039007 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000012C5824AA00039007 /* LocationService.swift */; };
+		1B000012C5824AA00039008 /* AirQualityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000012C5824AA00039008 /* AirQualityViewModel.swift */; };
+		1B000012C5824AA00039009 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000012C5824AA00039009 /* PreferencesView.swift */; };
+		1B000012C5824AA0003900A /* AirQualityInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000012C5824AA0003900A /* AirQualityInfoView.swift */; };
+		1B000012C5824AA0003900B /* NSColor+AQI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000012C5824AA0003900B /* NSColor+AQI.swift */; };
+		1B000012C5824AA0003900C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000012C5824AA0003900C /* WelcomeView.swift */; };
 		8E28E5362C5824AA00039007 /* air_qualityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E28E5352C5824AA00039007 /* air_qualityApp.swift */; };
-		8E6642DB2C5A5DD200943818 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6642DA2C5A5DD200943818 /* AboutView.swift */; };
 		8E859D382C5927700043F4A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E859D372C5927700043F4A8 /* ContentView.swift */; };
-		8E859D3A2C5928130043F4A8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E859D392C5928130043F4A8 /* Location.swift */; };
 		8EBA47DE2C5A792200CC9C30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EBA47DD2C5A792200CC9C30 /* Assets.xcassets */; };
+		9E000012C5824AA00039001 /* AQIMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D000012C5824AA00039001 /* AQIMetricsTests.swift */; };
+		9E000012C5824AA00039002 /* AirQualityDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D000012C5824AA00039002 /* AirQualityDecodingTests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9F000012C5824AA00039001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E28E52A2C5824AA00039007 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E28E5312C5824AA00039007;
+			remoteInfo = Oxygenie;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1A000012C5824AA00039001 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
+		1A000012C5824AA00039002 /* AirQualityError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityError.swift; sourceTree = "<group>"; };
+		1A000012C5824AA00039003 /* AQIMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIMetrics.swift; sourceTree = "<group>"; };
+		1A000012C5824AA00039004 /* AirQualityModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityModels.swift; sourceTree = "<group>"; };
+		1A000012C5824AA00039005 /* AirQualityCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityCache.swift; sourceTree = "<group>"; };
+		1A000012C5824AA00039006 /* AirQualityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityService.swift; sourceTree = "<group>"; };
+		1A000012C5824AA00039007 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		1A000012C5824AA00039008 /* AirQualityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityViewModel.swift; sourceTree = "<group>"; };
+		1A000012C5824AA00039009 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		1A000012C5824AA0003900A /* AirQualityInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityInfoView.swift; sourceTree = "<group>"; };
+		1A000012C5824AA0003900B /* NSColor+AQI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+AQI.swift"; sourceTree = "<group>"; };
+		1A000012C5824AA0003900C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		8E28E5322C5824AA00039007 /* Oxygenie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oxygenie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E28E5352C5824AA00039007 /* air_qualityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = air_qualityApp.swift; sourceTree = "<group>"; };
-		8E6642DA2C5A5DD200943818 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		8E859D372C5927700043F4A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		8E859D392C5928130043F4A8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		8EBA47DD2C5A792200CC9C30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EBA47E02C5A7E7B00CC9C30 /* air-quality.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "air-quality.entitlements"; sourceTree = "<group>"; };
+		9C000012C5824AA00039001 /* OxygenieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OxygenieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D000012C5824AA00039001 /* AQIMetricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIMetricsTests.swift; sourceTree = "<group>"; };
+		9D000012C5824AA00039002 /* AirQualityDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityDecodingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,15 +67,70 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9B000012C5824AA00039001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C000012C5824AA00039001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A000012C5824AA00039002 /* AirQualityError.swift */,
+				1A000012C5824AA00039003 /* AQIMetrics.swift */,
+				1A000012C5824AA00039004 /* AirQualityModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1C000012C5824AA00039002 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1A000012C5824AA00039005 /* AirQualityCache.swift */,
+				1A000012C5824AA00039006 /* AirQualityService.swift */,
+				1A000012C5824AA00039007 /* LocationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1C000012C5824AA00039003 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1A000012C5824AA00039008 /* AirQualityViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1C000012C5824AA00039004 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A000012C5824AA00039009 /* PreferencesView.swift */,
+				1A000012C5824AA0003900A /* AirQualityInfoView.swift */,
+				1A000012C5824AA0003900C /* WelcomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1C000012C5824AA00039005 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1A000012C5824AA00039001 /* AppLogger.swift */,
+				1A000012C5824AA0003900B /* NSColor+AQI.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		8E28E5292C5824AA00039007 = {
 			isa = PBXGroup;
 			children = (
 				8EBA47E02C5A7E7B00CC9C30 /* air-quality.entitlements */,
 				8EBA47DD2C5A792200CC9C30 /* Assets.xcassets */,
 				8E28E5342C5824AA00039007 /* air-quality */,
+				9D000012C5824AA00039000 /* OxygenieTests */,
 				8E28E5332C5824AA00039007 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8E28E5322C5824AA00039007 /* Oxygenie.app */,
+				9C000012C5824AA00039001 /* OxygenieTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,10 +149,22 @@
 			children = (
 				8E28E5352C5824AA00039007 /* air_qualityApp.swift */,
 				8E859D372C5927700043F4A8 /* ContentView.swift */,
-				8E859D392C5928130043F4A8 /* Location.swift */,
-				8E6642DA2C5A5DD200943818 /* AboutView.swift */,
+				1C000012C5824AA00039001 /* Models */,
+				1C000012C5824AA00039002 /* Services */,
+				1C000012C5824AA00039003 /* ViewModels */,
+				1C000012C5824AA00039004 /* Views */,
+				1C000012C5824AA00039005 /* Utilities */,
 			);
 			path = "air-quality";
+			sourceTree = "<group>";
+		};
+		9D000012C5824AA00039000 /* OxygenieTests */ = {
+			isa = PBXGroup;
+			children = (
+				9D000012C5824AA00039001 /* AQIMetricsTests.swift */,
+				9D000012C5824AA00039002 /* AirQualityDecodingTests.swift */,
+			);
+			path = OxygenieTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +187,24 @@
 			productReference = 8E28E5322C5824AA00039007 /* Oxygenie.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9A000012C5824AA00039001 /* OxygenieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A000012C5824AA00039002 /* Build configuration list for PBXNativeTarget "OxygenieTests" */;
+			buildPhases = (
+				9A000012C5824AA00039003 /* Sources */,
+				9B000012C5824AA00039001 /* Frameworks */,
+				9A000012C5824AA00039004 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F000012C5824AA00039002 /* PBXTargetDependency */,
+			);
+			name = OxygenieTests;
+			productName = OxygenieTests;
+			productReference = 9C000012C5824AA00039001 /* OxygenieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +217,10 @@
 				TargetAttributes = {
 					8E28E5312C5824AA00039007 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					9A000012C5824AA00039001 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 8E28E5312C5824AA00039007;
 					};
 				};
 			};
@@ -113,6 +238,7 @@
 			projectRoot = "";
 			targets = (
 				8E28E5312C5824AA00039007 /* Oxygenie */,
+				9A000012C5824AA00039001 /* OxygenieTests */,
 			);
 		};
 /* End PBXProject section */
@@ -126,6 +252,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9A000012C5824AA00039004 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -133,14 +266,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E6642DB2C5A5DD200943818 /* AboutView.swift in Sources */,
+				1B000012C5824AA00039001 /* AppLogger.swift in Sources */,
+				1B000012C5824AA00039002 /* AirQualityError.swift in Sources */,
+				1B000012C5824AA00039003 /* AQIMetrics.swift in Sources */,
+				1B000012C5824AA00039004 /* AirQualityModels.swift in Sources */,
+				1B000012C5824AA00039005 /* AirQualityCache.swift in Sources */,
+				1B000012C5824AA00039006 /* AirQualityService.swift in Sources */,
+				1B000012C5824AA00039007 /* LocationService.swift in Sources */,
+				1B000012C5824AA00039008 /* AirQualityViewModel.swift in Sources */,
+				1B000012C5824AA00039009 /* PreferencesView.swift in Sources */,
+				1B000012C5824AA0003900A /* AirQualityInfoView.swift in Sources */,
+				1B000012C5824AA0003900B /* NSColor+AQI.swift in Sources */,
+				1B000012C5824AA0003900C /* WelcomeView.swift in Sources */,
 				8E859D382C5927700043F4A8 /* ContentView.swift in Sources */,
-				8E859D3A2C5928130043F4A8 /* Location.swift in Sources */,
 				8E28E5362C5824AA00039007 /* air_qualityApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9A000012C5824AA00039003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E000012C5824AA00039001 /* AQIMetricsTests.swift in Sources */,
+				9E000012C5824AA00039002 /* AirQualityDecodingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F000012C5824AA00039002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E28E5312C5824AA00039007 /* Oxygenie */;
+			targetProxy = 9F000012C5824AA00039001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8E28E53F2C5824AC00039007 /* Debug */ = {
@@ -266,7 +426,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=macosx*]" = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "air-quality.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -282,13 +441,14 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSLocationUsageDescription = "This app needs access This app requires access to your location to provide relevant air quality data. Your coordinates are used to display your location and to retrieve data from the Open-Meteo API (https://open-meteo.com/). We do not store, track, or use your location data for any other purpose.to your location to determine relevant air quality data. The co-ordinates are used to display your location and are passed to an API (https://open-meteo.com/) to retrieve air quality data. ";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires access to your location to provide relevant air quality data. Your coordinates are used to display your location and to retrieve data from the Open-Meteo API (https://open-meteo.com/). We do not store, track, or use your location data for any other purpose.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Oxygenie uses your location to fetch local air quality from the Open-Meteo API. Coordinates are not stored on our servers.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Oxygenie uses your location to fetch local air quality from the Open-Meteo API. Coordinates are not stored on our servers.";
+				INFOPLIST_KEY_NSUserNotificationsUsageDescription = "Oxygenie can notify you when air quality crosses the AQI threshold you set in Preferences.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "roryflint.air-quality";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,7 +462,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=macosx*]" = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "air-quality.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -318,18 +477,55 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSLocationUsageDescription = "This app needs access This app requires access to your location to provide relevant air quality data. Your coordinates are used to display your location and to retrieve data from the Open-Meteo API (https://open-meteo.com/). We do not store, track, or use your location data for any other purpose.to your location to determine relevant air quality data. The co-ordinates are used to display your location and are passed to an API (https://open-meteo.com/) to retrieve air quality data. ";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires access to your location to provide relevant air quality data. Your coordinates are used to display your location and to retrieve data from the Open-Meteo API (https://open-meteo.com/). We do not store, track, or use your location data for any other purpose.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Oxygenie uses your location to fetch local air quality from the Open-Meteo API. Coordinates are not stored on our servers.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Oxygenie uses your location to fetch local air quality from the Open-Meteo API. Coordinates are not stored on our servers.";
+				INFOPLIST_KEY_NSUserNotificationsUsageDescription = "Oxygenie can notify you when air quality crosses the AQI threshold you set in Preferences.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "roryflint.air-quality";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9A000012C5824AA00039005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZS866NWVAV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "roryflint.air-quality.tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Oxygenie.app/Contents/MacOS/Oxygenie";
+			};
+			name = Debug;
+		};
+		9A000012C5824AA00039006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZS866NWVAV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "roryflint.air-quality.tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Oxygenie.app/Contents/MacOS/Oxygenie";
 			};
 			name = Release;
 		};
@@ -350,6 +546,15 @@
 			buildConfigurations = (
 				8E28E5422C5824AC00039007 /* Debug */,
 				8E28E5432C5824AC00039007 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A000012C5824AA00039002 /* Build configuration list for PBXNativeTarget "OxygenieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A000012C5824AA00039005 /* Debug */,
+				9A000012C5824AA00039006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
